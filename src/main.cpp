@@ -13,12 +13,17 @@ struct Transform {
 	float z;
 };
 
+struct Test {
+	NG_Float a;
+};
+
 int main() {
 	std::unique_ptr<EntityManager> em = std::make_unique<EntityManager>();
 	std::unique_ptr<ComponentManager> cm = std::make_unique<ComponentManager>();
 
 	cm->RegisterComponent<Velocity>();
 	cm->RegisterComponent<Transform>();
+	cm->RegisterComponent<Test>();
 
 	Transform t = {
 		.x = 0.0f,
@@ -29,16 +34,17 @@ int main() {
 		.name = 0
 	};
 
+	Test test = { .a = 100.0f };
+
 	Entity entity = em->CreateEntity();
 
 	cm->AddComponent(entity, t);
 	cm->AddComponent(entity, v);
+	cm->AddComponent(entity, test);
 
 	while (true) {
-		Transform& transform = cm->GetComponent<Transform>(entity);
+		Test& test = cm->GetComponent<Test>(entity);
 
-		transform.x += 1.0f;
-
-		printf("%f %f %f\n", transform.x, transform.y, transform.z);
+		printf("%f \n", test.a.get());
 	}
 }

@@ -4,3 +4,5 @@
 #include "entity_manager.hpp"
 #include "component_array.hpp"
 #include "component_manager.hpp"
+
+#include "./types/types.hpp"
