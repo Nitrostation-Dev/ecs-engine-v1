@@ -35,6 +35,8 @@ public:
 
 	template<typename T>
 	void AddComponent(Entity entity, T component) { m_componentManager->AddComponent(entity, component); }
+	template<typename... Ts>
+	void AddComponent(Entity entity, Ts... components) { (..., m_componentManager->AddComponent(entity, components)); }
 	template<typename T>
 	void RemoveComponent(Entity entity) { m_componentManager->RemoveComponent<T>(entity); }
 	template<typename T>

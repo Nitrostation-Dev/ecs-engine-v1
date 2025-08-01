@@ -27,5 +27,11 @@ int main() {
 
 	std::cout << transform.a << std::endl;
 
+	Entity e = c.CreateEntity();
+	
+	c.AddComponent(e, Player{}, Transform { .a = 10000.3245f });
+	auto transform1 = c.GetComponent<Transform>(e);
+	std::cout << transform1.a << std::endl;
+
 	return 0;
 }
