@@ -59,7 +59,6 @@ public:
 		return GetComponentArray<T>()->GetData(entity);
 	}
 
-	template<typename T>
 	void EntityDestroyed(Entity entity) {
 		for (auto const& pair : m_componentArrays) {
 			auto const& component = pair.second;

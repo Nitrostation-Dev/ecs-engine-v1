@@ -1,6 +1,6 @@
 #pragma once
 
-#include "nitrogen.hpp"
+#include "common.hpp"
 
 #include <cassert>
 #include <queue>

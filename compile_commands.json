@@ -1,1 +1,38 @@
-[]
+[
+  {
+    "arguments": [
+      "/nix/store/7nlf5v84s4p2yhx327j8495yik60qnzh-gcc-wrapper-14.3.0/bin/g++",
+      "-DGRAPHICS_API_OPENGL_33",
+      "-DPLATFORM_DESKTOP",
+      "-I/mnt/Local Disk/Projects/programming/games/cpp/ecs-engine-v1/include",
+      "-I/mnt/Local Disk/Projects/programming/games/cpp/ecs-engine-v1/build/_deps/raylib-src/src",
+      "-I/mnt/Local Disk/Projects/programming/games/cpp/ecs-engine-v1/build/_deps/raylib-src/src/external/glfw/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/nitrongen-proto-uno.dir/src/main.cpp.o",
+      "/mnt/Local Disk/Projects/programming/games/cpp/ecs-engine-v1/src/main.cpp"
+    ],
+    "directory": "/mnt/Local Disk/Projects/programming/games/cpp/ecs-engine-v1/build",
+    "file": "/mnt/Local Disk/Projects/programming/games/cpp/ecs-engine-v1/src/main.cpp",
+    "output": "/mnt/Local Disk/Projects/programming/games/cpp/ecs-engine-v1/build/CMakeFiles/nitrongen-proto-uno.dir/src/main.cpp.o"
+  },
+  {
+    "arguments": [
+      "/nix/store/7nlf5v84s4p2yhx327j8495yik60qnzh-gcc-wrapper-14.3.0/bin/g++",
+      "-DGRAPHICS_API_OPENGL_33",
+      "-DPLATFORM_DESKTOP",
+      "-I/mnt/Local Disk/Projects/programming/games/cpp/ecs-engine-v1/include",
+      "-I/mnt/Local Disk/Projects/programming/games/cpp/ecs-engine-v1/build/_deps/raylib-src/src",
+      "-I/mnt/Local Disk/Projects/programming/games/cpp/ecs-engine-v1/build/_deps/raylib-src/src/external/glfw/include",
+      "-std=gnu++17",
+      "-c",
+      "-o",
+      "CMakeFiles/nitrongen-proto-uno.dir/src/entity_manager.cpp.o",
+      "/mnt/Local Disk/Projects/programming/games/cpp/ecs-engine-v1/src/entity_manager.cpp"
+    ],
+    "directory": "/mnt/Local Disk/Projects/programming/games/cpp/ecs-engine-v1/build",
+    "file": "/mnt/Local Disk/Projects/programming/games/cpp/ecs-engine-v1/src/entity_manager.cpp",
+    "output": "/mnt/Local Disk/Projects/programming/games/cpp/ecs-engine-v1/build/CMakeFiles/nitrongen-proto-uno.dir/src/entity_manager.cpp.o"
+  }
+]

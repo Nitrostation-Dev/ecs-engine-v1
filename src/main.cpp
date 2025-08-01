@@ -1,50 +1,31 @@
 #include <nitrogen.hpp>
 
-#include <cstdio>
-#include <memory>
+Coordinator c;
 
-struct Velocity {
-	const char* name;
-};
+struct Player {};
 
 struct Transform {
-	float x;
-	float y;
-	float z;
+	float a;
 };
 
-struct Test {
-	NG_Float a;
+struct Velocity {
+	float x;
 };
 
 int main() {
-	std::unique_ptr<EntityManager> em = std::make_unique<EntityManager>();
-	std::unique_ptr<ComponentManager> cm = std::make_unique<ComponentManager>();
+	c.Init();
 
-	cm->RegisterComponent<Velocity>();
-	cm->RegisterComponent<Transform>();
-	cm->RegisterComponent<Test>();
+	c.RegisterComponent<Player>();
+	c.RegisterComponent<Transform>();
+	c.RegisterComponent<Velocity>();
 
-	Transform t = {
-		.x = 0.0f,
-		.y = 0.0f,
-		.z = 0.0f,
-	};
-	Velocity v = {
-		.name = 0
-	};
+	Entity entity = c.SpawnEntity(Player{}, (Transform){ .a =  10.0f }, (Velocity) { .x =  5.0f });
 
-	Test test = { .a = 100.0f };
+	std::cout << entity + 0 << std::endl;
 
-	Entity entity = em->CreateEntity();
+	auto transform = c.GetComponent<Transform>(entity);
 
-	cm->AddComponent(entity, t);
-	cm->AddComponent(entity, v);
-	cm->AddComponent(entity, test);
+	std::cout << transform.a << std::endl;
 
-	while (true) {
-		Test& test = cm->GetComponent<Test>(entity);
-
-		printf("%f \n", test.a.get());
-	}
+	return 0;
 }
