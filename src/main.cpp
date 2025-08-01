@@ -15,17 +15,17 @@ struct Velocity {
 int main() {
 	c.Init();
 
-	c.RegisterComponent<Player>();
-	c.RegisterComponent<Transform>();
-	c.RegisterComponent<Velocity>();
+	// c.RegisterComponent<Player>();
+	// c.RegisterComponent<Transform>();
+	// c.RegisterComponent<Velocity>();
 
-	Entity entity = c.SpawnEntity(Player{}, (Transform){ .a =  10.0f }, (Velocity) { .x =  5.0f });
+	Entity entity = c.SpawnEntity(Player{}, (Velocity) { .x =  5.0f });
 
 	std::cout << entity + 0 << std::endl;
 
-	auto transform = c.GetComponent<Transform>(entity);
+	auto velocity = c.GetComponent<Velocity>(entity);
 
-	std::cout << transform.a << std::endl;
+	std::cout << velocity.x << std::endl;
 
 	Entity e = c.CreateEntity();
 	

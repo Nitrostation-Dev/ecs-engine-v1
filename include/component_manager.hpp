@@ -6,6 +6,8 @@
 #include <array>
 #include <iostream>
 #include <memory>
+#include <optional>
+#include <string>
 #include <unordered_map>
 
 class ComponentManager {
@@ -36,10 +38,12 @@ public:
 	}
 
 	template<typename T>
-	ComponentId GetComponentId() {
+	std::optional<ComponentId> GetComponentId() {
 		const char* typeName = typeid(T).name();
 
-		assert(m_componentIdsMap.find(typeName) != m_componentIdsMap.end() && "Component Not Registered.");
+		// assert(m_componentIdsMap.find(typeName) != m_componentIdsMap.end() && "Component Not Registered.");
+		if (m_componentIdsMap.find(typeName) == m_componentIdsMap.end())
+			return std::nullopt;
 
 		return m_componentIdsMap[typeName];
 	}
